@@ -3,7 +3,7 @@
 
 Name:           os-brick
 Version:        XXX
-Release:        XXX{?dist}
+Release:        XXX
 Summary:        OpenStack Cinder brick library for managing local volume attaches
 
 License:        ASL 2.0
