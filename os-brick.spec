@@ -1,9 +1,9 @@
 # Created by pyp2rpm-1.1.2
 %global pypi_name os-brick
 
-Name:           python-%{pypi_name}
-Version:        0.1.0
-Release:        1%{?dist}
+Name:           os-brick
+Version:        XXX
+Release:        XXX{?dist}
 Summary:        OpenStack Cinder brick library for managing local volume attaches
 
 License:        ASL 2.0
@@ -14,6 +14,7 @@ BuildArch:      noarch
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-sphinx
+BuildRequires:	python-oslo-sphinx
 
 
 %description
@@ -37,7 +38,7 @@ refer to the parent project, Cinder:
 * License: Apache 2.0
 
 %prep
-%setup -q -n %{pypi_name}-%{version}
+%setup -q -n %{name}-%{upstream_version}
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
@@ -59,9 +60,7 @@ rm -rf html/.{doctrees,buildinfo}
 %files
 %license LICENSE
 %doc html README.rst doc/source/readme.rst
-%{python2_sitelib}/%{pypi_name}
-%{python2_sitelib}/ 
-%{python2_sitelib}/os_brick-%{version}-py?.?.egg-info
+%{python2_sitelib}/os_brick*
 
 %changelog
 * Wed May 13 2015 jpena <jpena@redhat.com> - 0.1.0-1
