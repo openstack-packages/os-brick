@@ -39,8 +39,6 @@ refer to the parent project, Cinder:
 
 %prep
 %setup -q -n %{name}-%{upstream_version}
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
 
 # generate html docs 
 sphinx-build doc/source html
@@ -63,5 +61,3 @@ rm -rf html/.{doctrees,buildinfo}
 %{python2_sitelib}/os_brick*
 
 %changelog
-* Wed May 13 2015 jpena <jpena@redhat.com> - 0.1.0-1
-- Initial package.
