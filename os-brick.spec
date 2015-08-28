@@ -11,11 +11,20 @@ URL:            http://www.openstack.org/
 Source0:        https://pypi.python.org/packages/source/o/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 
+Requires:       python-babel >= 1.3
+Requires:       python-oslo-serialization
+Requires:       python-oslo-concurrency
+Requires:       python-oslo-i18n
+Requires:       python-oslo-log
+Requires:       python-oslo-service
+Requires:       python-oslo-utils
+Requires:       python-retrying
+Requires:       python-six >= 1.9.0
+
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-sphinx
-BuildRequires:	python-oslo-sphinx
-
+BuildRequires:  python-oslo-sphinx
 
 %description
 OpenStack Cinder brick library for managing local volume attaches
@@ -45,11 +54,14 @@ rm -rf html/.{doctrees,buildinfo}
 %install
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
+# Move config files to proper location
+install -d -m 755 %{buildroot}%{_datarootdir}/%{name}/rootwrap
+mv %{buildroot}/usr/etc/os-brick/rootwrap.d/*.filters %{buildroot}%{_datarootdir}/%{name}/rootwrap
 
 %files
 %license LICENSE
 %doc html README.rst
 %{python2_sitelib}/os_brick*
-
+%{_datarootdir}/%{name}/rootwrap/os-brick.filters
 
 %changelog
