@@ -24,6 +24,7 @@ Summary:        OpenStack Cinder brick library for managing local volume attache
 Provides:       os-brick = %{version}-%{release}
 
 Requires:       python-babel >= 1.3
+Requires:       python-eventlet >= 0.17.4
 Requires:       python-oslo-serialization >= 1.4.0
 Requires:       python-oslo-concurrency >= 2.3.0
 Requires:       python-oslo-i18n >= 1.5.0
@@ -35,7 +36,8 @@ Requires:       python-retrying
 Requires:       python-six >= 1.9.0
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
+BuildRequires:  python-pbr >= 1.6.0
+BuildRequires:  python-reno
 BuildRequires:  python-sphinx
 BuildRequires:  python-oslo-concurrency  >= 2.3.0
 BuildRequires:  python-oslo-i18n >= 1.5.0
@@ -55,6 +57,7 @@ Summary:        OpenStack Cinder brick library for managing local volume attache
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
 Requires:       python3-babel >= 1.3
+Requires:       python3-eventlet >= 0.17.4
 Requires:       python3-oslo-serialization >= 1.4.0
 Requires:       python3-oslo-concurrency >= 2.3.0
 Requires:       python3-oslo-i18n >= 1.5.0
@@ -66,7 +69,8 @@ Requires:       python3-retrying
 Requires:       python3-six >= 1.9.0
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
+BuildRequires:  python3-pbr >= 1.6.0
+BuildRequires:  python3-reno
 BuildRequires:  python3-sphinx
 BuildRequires:  python3-oslo-concurrency  >= 2.3.0
 BuildRequires:  python3-oslo-i18n >= 1.5.0
